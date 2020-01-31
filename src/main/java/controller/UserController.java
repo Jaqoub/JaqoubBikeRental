@@ -1,6 +1,7 @@
 package controller;
 
 import model.Bicycle;
+import model.Postcodes;
 import model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,8 +20,9 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
     @Autowired
+    private Postcodes postcodes;
+    @Autowired
     private BicycleRepository bicycleRepository;
-
 
     @GetMapping("/getUser")
     public ResponseEntity getUser(@RequestParam(name = "facebook_id") Long userId) {
